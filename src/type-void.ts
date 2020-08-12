@@ -20,6 +20,35 @@ function showFormattedInfo(user: any){
 
 showFormattedInfo({id: '1A', name: 'ceva_19', nickName: 'Carlos'});
 
+////////////////////////
+
 //Tipo void como tipo de dato
 let unusable: void;
 unusable = undefined;
+
+////////////////////
+
+//Tipo Never: tipo inferido -> funcion que nunca retorna un valor u objeto
+function handleError(code: number, message: string): never
+{
+    //procesamiento del error
+    //generamos un mensaje
+    throw new Error(`${message}. ${code}`);
+}
+
+try {
+    handleError(404, 'Resource not found');
+} catch (error) {
+    
+}
+
+/* function sumNumbers(limit: number): never
+{
+    let sum = 0;
+    //ciclo infinito
+    while(true)
+    {
+        sum++;
+    }
+} */
+

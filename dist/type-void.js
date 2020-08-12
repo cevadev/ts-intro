@@ -12,6 +12,28 @@ function showFormattedInfo(user) {
     console.log('User Info: ', "\n        User id: " + user.id + ",\n        User Name: " + user.name + ",\n        Nick Name: " + user.nickName + "\n    ");
 }
 showFormattedInfo({ id: '1A', name: 'ceva_19', nickName: 'Carlos' });
+////////////////////////
 //Tipo void como tipo de dato
 var unusable;
 unusable = undefined;
+////////////////////
+//Tipo Never: tipo inferido -> funcion que nunca retorna un valor u objeto
+function handleError(code, message) {
+    //procesamiento del error
+    //generamos un mensaje
+    throw new Error(message + ". " + code);
+}
+try {
+    handleError(404, 'Resource not found');
+}
+catch (error) {
+}
+/* function sumNumbers(limit: number): never
+{
+    let sum = 0;
+    //ciclo infinito
+    while(true)
+    {
+        sum++;
+    }
+} */
