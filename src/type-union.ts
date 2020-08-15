@@ -26,3 +26,9 @@ function getUsernameById(id: IdUser) {
 
 getUsernameById(4);
 getUsernameById('8');
+
+//---------- TIPOS LITERALES -------------//
+//Tamaño de fotos permitidas: 100x100, 500x500, 1000x1000
+type pictureSize =  '100x100' | '500x500' | '1000x1000';
+let smallPicture: pictureSize = '100x100';
+let mediumPicture: pictureSize = '500x500';

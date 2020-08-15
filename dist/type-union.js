@@ -19,3 +19,5 @@ function getUsernameById(id) {
 }
 getUsernameById(4);
 getUsernameById('8');
+var smallPicture = '100x100';
+var mediumPicture = '500x500';
