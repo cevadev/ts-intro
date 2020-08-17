@@ -7,40 +7,11 @@ var PhotoOrientation;
     PhotoOrientation[PhotoOrientation["Squere"] = 2] = "Squere";
     PhotoOrientation[PhotoOrientation["Panorama"] = 3] = "Panorama";
 })(PhotoOrientation || (PhotoOrientation = {}));
-//Otra forma de aplicar propiedades privadas en anteponiendo el simbolo #. 
-class Picture {
-    constructor(id, title, orientation) {
-        //this.#_id = _id;
+//Creamos una nueva clase que defina las propiedad id, title y sean heredadas por Picture y Album
+class Item {
+    constructor(id, title) {
         this._id = id;
         this._title = title;
-        this._orientation = orientation;
-    }
-    //metodos accesors
-    get id() {
-        return this._id;
-    }
-    get title() {
-        return this._title;
-    }
-    get orientation() {
-        return this._orientation;
-    }
-    set title(title) {
-        this._title = title;
-    }
-    set orientation(orientation) {
-        this._orientation = orientation;
-    }
-    //Comportamiento
-    toString() {
-        return `[id: ${this._id}, ${this._title}, ${this._orientation}]`;
-    }
-}
-class Album {
-    constructor(_id, title) {
-        this._id = _id;
-        this._title = title;
-        this.pictures = [];
     }
     get id() {
         return this._id;
@@ -54,6 +25,32 @@ class Album {
     set title(title) {
         this._title = title;
     }
+    toString() {
+        return `[id: ${this._id}, title: ${this._title}]`;
+    }
+}
+//Otra forma de aplicar propiedades privadas en anteponiendo el simbolo #. 
+class Picture extends Item {
+    constructor(id, title, orientation) {
+        super(id, title);
+        this._orientation = orientation;
+    }
+    get orientation() {
+        return this._orientation;
+    }
+    set orientation(orientation) {
+        this._orientation = orientation;
+    }
+    //Comportamiento
+    toString() {
+        return `[id: ${super.id}, ${super.title}, ${this._orientation}]`;
+    }
+}
+class Album extends Item {
+    constructor(id, title) {
+        super(id, title);
+        this.pictures = [];
+    }
     addPicture(picture) {
         this.pictures.push(picture);
     }
@@ -64,5 +61,5 @@ console.log('Album ', album);
 //Accediendo a los miembros publicos
 console.log(`Album id: ${album.id}`); //invocamos al metodo get id()
 //accedemos al metodo set title()
-album.title = 'Vaciones 2019';
+album.title = 'Vaciones 2020';
 console.log(`Album Title: ${album.title}`);
