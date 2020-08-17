@@ -6,41 +6,36 @@ enum PhotoOrientation {
     Panorama = 3
 }
 
-class Picture
-{
-    private id: number;
+//Otra forma de aplicar propiedades privadas en anteponiendo el simbolo #. 
+class Picture {
+    #id: number;
     private title: string;
     private orientation: PhotoOrientation;
 
-    constructor(id: number, title: string, orientation: PhotoOrientation)
-    {
-        this.id = id;
+    constructor(id: number, title: string, orientation: PhotoOrientation) {
+        this.#id = id;
         this.title = title;
         this.orientation = orientation;
     }
 
     //Comportamiento
-    public toString()
-    {
-        return `[id: ${this.id}, ${this.title}, ${this.orientation}]`;
+    public toString() {
+        return `[id: ${this.#id}, ${this.title}, ${this.orientation}]`;
     }
 }
 
-class Album
-{
+class Album {
     private id: number;
     private title: string;
     private pictures: Picture[];
 
-    constructor(id: number, title: string)
-    {
+    constructor(id: number, title: string) {
         this.id = id;
         this.title = title;
         this.pictures = [];
     }
 
-    public addPicture(picture: Picture)
-    {
+    public addPicture(picture: Picture) {
         this.pictures.push(picture);
     }
 }

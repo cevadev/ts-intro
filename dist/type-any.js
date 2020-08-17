@@ -1,9 +1,9 @@
 "use strict";
 //Tipo Explicito
-var idUser;
+let idUser;
 idUser = 1;
 idUser = 'Pedro';
 //Tipo Inferido
-var otherId;
+let otherId;
 otherId = 2;
 otherId = 'CC001';

@@ -9,19 +9,23 @@ userInfo({ id: 1, userName: 'barcvilla', firstName: 'Villanueva' });
 console.log(userInfo);
 //Tipo inferido
 function showFormattedInfo(user) {
-    console.log('User Info: ', "\n        User id: " + user.id + ",\n        User Name: " + user.name + ",\n        Nick Name: " + user.nickName + "\n    ");
+    console.log('User Info: ', `
+        User id: ${user.id},
+        User Name: ${user.name},
+        Nick Name: ${user.nickName}
+    `);
 }
 showFormattedInfo({ id: '1A', name: 'ceva_19', nickName: 'Carlos' });
 ////////////////////////
 //Tipo void como tipo de dato
-var unusable;
+let unusable;
 unusable = undefined;
 ////////////////////
 //Tipo Never: tipo inferido -> funcion que nunca retorna un valor u objeto
 function handleError(code, message) {
     //procesamiento del error
     //generamos un mensaje
-    throw new Error(message + ". " + code);
+    throw new Error(`${message}. ${code}`);
 }
 try {
     handleError(404, 'Resource not found');

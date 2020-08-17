@@ -9,7 +9,7 @@ function getUsernameById(id: number | string)
     //business logic para encontrar un usuario
     return 'Juan Antonio';
 } */
-var userId;
+let userId;
 userId = 10;
 userId = '10';
 // Buscar un UserName dado un ID
@@ -19,5 +19,5 @@ function getUsernameById(id) {
 }
 getUsernameById(4);
 getUsernameById('8');
-var smallPicture = '100x100';
-var mediumPicture = '500x500';
+let smallPicture = '100x100';
+let mediumPicture = '500x500';

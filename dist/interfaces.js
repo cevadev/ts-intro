@@ -14,10 +14,10 @@ var PhotoOrientation;
 }
  */
 function showPicture(picture) {
-    console.log("[title: " + picture.title + ", date: " + picture.date + ", orientation: " + picture.orientation + "]");
+    console.log(`[title: ${picture.title}, date: ${picture.date}, orientation: ${picture.orientation}]`);
 }
 //construimos un objeto picture
-var myPicture = {
+let myPicture = {
     title: 'My vacations',
     date: '2020-01-01',
     orientation: PhotoOrientation.Landscape
@@ -30,7 +30,7 @@ showPicture({
     orientation: PhotoOrientation.Panorama
 });
 function generatePicture(config) {
-    var pic = { title: 'default', date: '2020-02-10' };
+    const pic = { title: 'default', date: '2020-02-10' };
     if (config.title) {
         pic.title = config.title;
     }
@@ -39,18 +39,18 @@ function generatePicture(config) {
     }
     return pic;
 }
-var picture = generatePicture({});
-console.log("Picture: " + picture.title + ", " + picture.date);
+let picture = generatePicture({});
+console.log(`Picture: ${picture.title}, ${picture.date}`);
 picture = generatePicture({ title: 'My last vacations' });
-console.log("my pictures: " + picture.title + ", " + picture.date);
-var user;
+console.log(`my pictures: ${picture.title}, ${picture.date}`);
+let user;
 user = {
     id: 1,
     username: 'barcvilla',
     isPro: true,
 };
 //mostramos el estado del objeto user
-console.log("Objeto user: " + user.id + ", " + user.username + ", " + user.isPro);
+console.log(`Objeto user: ${user.id}, ${user.username}, ${user.isPro}`);
 //cambiamos el estado de la variable user
 user.username = 'cevadev';
-console.log("Objeto user: " + user.id + ", " + user.username + ", " + user.isPro);
+console.log(`Objeto user: ${user.id}, ${user.username}, ${user.isPro}`);
