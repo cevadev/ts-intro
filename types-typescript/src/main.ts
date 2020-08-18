@@ -2,7 +2,7 @@
 //1. NUMBER
 //Explicito
 let telefono: number;
-telefono = 12568745;
+telefono = 125.68745;
 //telefono = 'hola'; //no puede aceptar cadenas
 
 //Inferido

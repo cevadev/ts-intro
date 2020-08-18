@@ -9,7 +9,7 @@ enum PhotoOrientation {
 //Uso de herencia en TS
 interface Entity
 {
-    id: number,
+    readonly id: number,
     title: string
 }
 
@@ -37,7 +37,7 @@ const picture: Picture = {
 
 //definimos newPicture como objeto vacio de tipo Picture
 let newPicture: Picture = {} as Picture;
-newPicture.id = 2;
+//newPicture.id = 2;
 newPicture.title = 'Moon';
 
 console.log(`Album: ${album.id}, ${album.title}, ${album.description}`);
